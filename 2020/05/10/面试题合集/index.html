@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">面试题合集 | LittleChai的博客</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  <!-- <link href="/css/viewer.css" rel="stylesheet"> -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/fontawesome.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "LittleChai";
+  mashiro_option.author_name = "";
+  mashiro_option.site_url = "/";
+  mashiro_option.v_appId = "WAr0wBCXxXy76TX9VsNrvb18-9Nh9j0Va";
+  mashiro_option.v_appKey = "awPQ580xAspEQJor3vdWQyjd";
+  mashiro_option.mathjax = "1";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://data.littlechai.cn/blog_bg1.jpg,https://data.littlechai.cn/blog_bg2.jpg,https://data.littlechai.cn/blog_bg3.jpg,https://data.littlechai.cn/blog_bg4.jpg,https://data.littlechai.cn/blog_bg5.jpg,https://data.littlechai.cn/blog_bg9.jpg,https://data.littlechai.cn/blog_bg10.png,https://data.littlechai.cn/blog_bg12.jpg,https://data.littlechai.cn/blog_bg13.jpg,https://data.littlechai.cn/blog_bg14.jpg,https://data.littlechai.cn/blog_bg15.jpg,https://data.littlechai.cn/blog_bg16.jpg,https://data.littlechai.cn/blog_bg17.jpg,https://data.littlechai.cn/blog_bg18.jpg,https://data.littlechai.cn/blog_bg19.jpg,https://data.littlechai.cn/blog_bg20.jpg,https://data.littlechai.cn/blog_bg28.jpg,https://data.littlechai.cn/blog_bg29.jpg,https://data.littlechai.cn/blog_bg32.jpg,https://data.littlechai.cn/blog_bg33.jpg,https://data.littlechai.cn/blog_bg34.png".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+
+  <style>
+    @keyframes loadDiv {
+
+      0%,
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .loadFade {
+      opacity: 1;
+      transition: all .5s linear;
+      transition-delay: 1s;
+    }
+
+    .loader {
+      background: #0c0c0c;
+      /* background: radial-gradient(rgb(235, 235, 235), rgb(255, 255, 255)); */
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      position: fixed;
+      /* right: 0; */
+      top: 0;
+      width: 100%;
+      z-index: 99999;
+      transform: translateX(0%);
+      transition: all 0.4s linear;
+    }
+
+    .loader-inner {
+      bottom: 0;
+      height: 60px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+    }
+
+    .loader-line-wrap {
+      -webkit-animation:
+        spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+      animation:
+        spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+      box-sizing: border-box;
+      height: 50px;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      width: 100px;
+    }
+
+    .loader-line {
+      border: 4px solid transparent;
+      border-radius: 100%;
+      box-sizing: border-box;
+      height: 100px;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+    }
+
+    .loader-line-wrap:nth-child(1) {
+      -webkit-animation-delay: -50ms;
+      animation-delay: -50ms;
+    }
+
+    .loader-line-wrap:nth-child(2) {
+      -webkit-animation-delay: -100ms;
+      animation-delay: -100ms;
+    }
+
+    .loader-line-wrap:nth-child(3) {
+      -webkit-animation-delay: -150ms;
+      animation-delay: -150ms;
+    }
+
+    .loader-line-wrap:nth-child(4) {
+      -webkit-animation-delay: -200ms;
+      animation-delay: -200ms;
+    }
+
+    .loader-line-wrap:nth-child(5) {
+      -webkit-animation-delay: -250ms;
+      animation-delay: -250ms;
+    }
+
+    .loader-line-wrap:nth-child(1) .loader-line {
+      border-color: rgb(215, 104, 157);
+      height: 90px;
+      width: 90px;
+      top: 7px;
+    }
+
+    .loader-line-wrap:nth-child(2) .loader-line {
+      border-color: rgb(93, 164, 220);
+      height: 76px;
+      width: 76px;
+      top: 14px;
+    }
+
+    .loader-line-wrap:nth-child(3) .loader-line {
+      border-color: rgb(243, 211, 55);
+      height: 62px;
+      width: 62px;
+      top: 21px;
+    }
+
+    .loader-line-wrap:nth-child(4) .loader-line {
+      border-color: rgb(107, 192, 72);
+      height: 48px;
+      width: 48px;
+      top: 28px;
+    }
+
+    .loader-line-wrap:nth-child(5) .loader-line {
+      border-color: rgb(238, 90, 48);
+      height: 34px;
+      width: 34px;
+      top: 35px;
+    }
+
+    @-webkit-keyframes spin {
+
+      0%,
+      15% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+
+      0%,
+      15% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script>
+    document.onreadystatechange = function () {
+      var loadTimer = null;
+      if (document.readyState == "complete") {
+        $('#loader').animate({
+          width: '-100%'
+        }, 500,'swing', function () {})
+      }
+    }
+  </script>
+</head>
+
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+</div></html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="/">
+          <img src="https://data.littlechai.cn/xcc.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>2021年我也会继续努力的~</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/littlechai" target="_blank" class="social-github" title="github">
+                    <img src="https://data.littlechai.cn/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://music.163.com/#/user/home?id=62879556" target="_blank" class="social-github" title="网易云">
+                    <img src="https://data.littlechai.cn/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="mailto:767733103@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="https://data.littlechai.cn/email.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">LittleChai</span>
+            <span class="shironeko"></span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-tada" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-tada" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/book/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-book faa-tada" aria-hidden="true"></i>
+                    书集
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/photo/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-photo faa-tada" aria-hidden="true"></i>
+                    图集
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-film faa-vertical faa-tada" aria-hidden="true"></i>
+                    番组
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-headphones faa-tada" aria-hidden="true"></i>
+                    歌单
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    个人简介
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<script src="/js/lazyCreate.js"></script>
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://data.littlechai.cn/blog_bg33.jpg);" src="https://data.littlechai.cn/bg_load2.svg" data-src="http://data.littlechai.cn/blog_bg33.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      面试题合集</h1>
+      <p class="entry-census">
+        <span>
+          <a href="/">
+            <img src="http://data.littlechai.cn/xcc.png">
+          </a>
+        </span>
+        <span>
+          <a href="/">LittleChai</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-5-10<span class="bull">
+        ·</span>
+        <span id="busuanzi_value_page_pv"></span>次阅读
+
+        <!-- <span id="面试题合集" class="leancloud_visitors" data-flag-title="面试题合集">
+          <em class="post-meta-item-text">阅读量 </em>
+          <span class="leancloud-visitors-count"></span>
+        </span> -->
+
+    </p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><a href="https://www.jianshu.com/p/f1f39d5b2a2e" target="_blank" rel="noopener">‘面试题合集’</a></p>
+<h2 id="题目顺序不分先后"><a href="#题目顺序不分先后" class="headerlink" title="题目顺序不分先后"></a>题目顺序不分先后</h2><h3 id="小程序传参的三种方法"><a href="#小程序传参的三种方法" class="headerlink" title="小程序传参的三种方法"></a>小程序传参的三种方法</h3><ul>
+<li>跳转地址后直接加参数   例如：?id=1</li>
+<li>使用系统缓存 wx.setStorageSync</li>
+<li>使用app.js中的globalData对象  var app = getApp();  app.globalData.xxx</li>
+</ul>
+<h3 id="数组去重有哪些方法"><a href="#数组去重有哪些方法" class="headerlink" title="数组去重有哪些方法"></a>数组去重有哪些方法</h3><ul>
+<li>arr.filter<pre><code class="js">let arr = [111,111,222,333,444,555,555];
+let arr2 = arr.filter((item,index) =&gt; {
+return arr.indexOf(item) === index
+})
+console.log(arr2); // [111,222,333,444,555]
+</code></pre>
+</li>
+<li>new Set([111,111,222,333,444,555,555])<pre><code class="js">let arr = [111,111,222,333,444,555,555];
+let arr2 = Array.from(new Set([...arr]))
+console.log(arr2) // [111,222,333,444,555]
+</code></pre>
+</li>
+<li><p>for循环算法</p>
+<pre><code class="js">let arr = [111,111,222,333,444,555,555];
+function distinct(arr) {
+  for (let i=0, len=arr.length; i&lt;len; i++) {
+      for (let j=i+1; j&lt;len; j++) {
+          if (arr[i] == arr[j]) {
+              arr.splice(j, 1);
+              // splice 会改变数组长度，所以要将数组长度 len 和下标 j 减一
+              len--;
+              j--;
+          }
+      }
+  }
+  return arr
+}
+
+console.log(distinct(arr))  // [111,222,333,444,555]
+</code></pre>
+</li>
+<li>includes()方法<pre><code class="js">let result = []
+for (let i of arr) {
+!result.includes(i) &amp;&amp; result.push(i)
+}
+console.log(result)  // [111,222,333,444,555]
+</code></pre>
+</li>
+<li><p>arr.reduce</p>
+<pre><code class="js">let arr1 = [111,111,222,333,444,555,555];
+let arr2 = arr1.reduce((prev,cur,index) =&gt; {
+prev.includes(cur) ? &#39;&#39; : prev.push(cur)
+return prev
+},[])
+
+console.log(arr2)
+</code></pre>
+</li>
+</ul>
+<h3 id="父组件给子组件传值"><a href="#父组件给子组件传值" class="headerlink" title="父组件给子组件传值"></a>父组件给子组件传值</h3><pre><code class="js">
+// 父组件
+&lt;child :val1=&#39;fatherVal1&#39; :val2=&#39;fatherVal2&#39; &gt;&lt;child&gt;
+
+data() {
+  return {
+    fatherVal1: &#39;我是父组件的值&#39;,
+    fatherVal2: {
+                &#39;aa&#39;: 1,
+                &#39;cc&#39;: 2
+            },
+  }
+}
+
+// 子组件
+export default {
+  props: {
+    val1: {
+      type: &#39;string&#39;,
+      default: () =&gt; {
+        return &quot;&quot;
+      }
+    },
+    val2: {
+      type: &#39;object&#39;,
+      default: ()=&gt; {
+        return &quot;&quot;
+      }
+    }
+  }
+}
+
+
+</code></pre>
+<h3 id="子组件给父组件传值"><a href="#子组件给父组件传值" class="headerlink" title="子组件给父组件传值"></a>子组件给父组件传值</h3><pre><code class="js">
+// 子组件
+&lt;button @click=&#39;toFather&#39;&gt;&lt;/button&gt;
+methods: {
+  toFather() {
+    this.$emit(&#39;fromChild&#39;,&#39;我是子组件传过来的&#39;)
+  }
+}
+
+// 父组件
+&lt;child @fromChild=&#39;fn&#39;&gt;&lt;/child&gt;
+methods: {
+  fn(msg) {
+    console.log(msg) //我是子组件传过来的
+  }
+}
+
+</code></pre>
+<h3 id="彻底搞懂vuex"><a href="#彻底搞懂vuex" class="headerlink" title="彻底搞懂vuex"></a>彻底搞懂vuex</h3><pre><code class="js">
+// state.js
+const state = {
+    num: 1,
+    type: &#39;one&#39;
+}   
+
+export default state
+
+
+// mutations.js
+import state from &#39;./state&#39;;
+
+const mutations = {
+    changeNum(state,n) {
+        state.num = n;
+    },
+    changeType(state,n) {
+        state.type = n;
+    }
+}
+
+export default mutations
+
+
+// getters.js
+const getters = {
+    getNum(state) {
+        return state.num
+    },
+    getType(state) {
+        return state.type
+    }
+}
+
+// actions.js
+import state from &#39;./state&#39;
+
+const actions = {
+  changeNum(content,val) {
+    return new Promise((resolve) =&gt; {
+      // 模拟异步
+      setTimeout(() =&gt; {
+        content.commit(&#39;changeNum&#39;,val)
+        resolve();
+      },3000)
+    })
+  }
+}
+
+
+// index.js
+import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+import state from &#39;./state&#39;
+import getters from &#39;./getters&#39;
+import mutations from &#39;./mutations&#39;
+import actions from &#39;./actions&#39;
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+    state,
+    getters,
+    mutations,
+    actions
+})
+
+export default store
+
+
+</code></pre>
+<h3 id="flex-排列元素自适应"><a href="#flex-排列元素自适应" class="headerlink" title="flex 排列元素自适应"></a>flex 排列元素自适应</h3><pre><code class="html">
+&lt;div class=&quot;test_flex&quot;&gt;
+  &lt;div class=&quot;flex_child&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex_child&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex_child&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex_child&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex_child&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex_child&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex_child&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex_child&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex_child&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+
+.test_flex {
+  width: 100%;
+  height: 200px;
+  background-color: gray;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.flex_child {
+  flex: 1;
+  margin: 10px 0 10px 10px;
+  max-width: 20%;
+  background-color: goldenrod;
+}
+
+.flex_child:last-child {
+  margin-right: 10px;
+}
+
+&lt;/style&gt;
+</code></pre>
+<h3 id="vue路由传参"><a href="#vue路由传参" class="headerlink" title="vue路由传参"></a>vue路由传参</h3><pre><code class="js">
+this.$router.push({
+  name: &#39;a&#39;,
+  params: {
+    val: &#39;参数&#39;
+  }
+})
+// 浏览器地址栏看不到参数
+// this.$route.params获取
+
+
+this.$router.push({
+  path: &#39;/a&#39;,
+  query: {
+    val: &#39;参数&#39;
+  }
+})
+// 浏览器地址栏可以看到参数
+// this.$route.query获取
+
+
+</code></pre>
+<h3 id="view-design按需加载"><a href="#view-design按需加载" class="headerlink" title="view-design按需加载"></a>view-design按需加载</h3><pre><code class="js">npm install babel-plugin-import --save-dev
+根目录新建.babelrc文件
+
+// .babelrc
+{
+  &quot;plugins&quot;: [[&quot;import&quot;, {
+    &quot;libraryName&quot;: &quot;view-design&quot;,
+    &quot;libraryDirectory&quot;: &quot;src/components&quot;
+  }]]
+}
+
+//main.js引入
+import { Button, Table } from &#39;view-design&#39;;
+import &#39;view-design/dist/styles/iview.css&#39;;
+Vue.component(&#39;Button&#39;, Button);
+Vue.component(&#39;Table&#39;, Table);
+
+</code></pre>
+<h3 id="浏览器缓存解决"><a href="#浏览器缓存解决" class="headerlink" title="浏览器缓存解决"></a>浏览器缓存解决</h3><ul>
+<li>给文件改名</li>
+</ul>
+<h3 id="跨域问题解决"><a href="#跨域问题解决" class="headerlink" title="跨域问题解决"></a>跨域问题解决</h3><ul>
+<li>proxy  </li>
+<li>jsonp</li>
+<li>后端cors</li>
+</ul>
+<h3 id="es5声明变量的方法"><a href="#es5声明变量的方法" class="headerlink" title="es5声明变量的方法"></a>es5声明变量的方法</h3><ul>
+<li>var</li>
+</ul>
+<h3 id="es6声明变量的方法"><a href="#es6声明变量的方法" class="headerlink" title="es6声明变量的方法"></a>es6声明变量的方法</h3><ul>
+<li>let </li>
+<li>const  </li>
+<li>function</li>
+<li>class</li>
+<li>import</li>
+</ul>
+<h3 id="mvvm是什么"><a href="#mvvm是什么" class="headerlink" title="mvvm是什么"></a>mvvm是什么</h3><ul>
+<li>Model-View-ViewModel的简写</li>
+<li>Model：代表数据模型，数据和业务逻辑都在Model层中定义</li>
+<li>View：代表UI视图，负责数据的展示</li>
+<li>ViewModel：负责监听Model中数据的改变并且控制视图的更新，处理用户交互操作</li>
+</ul>
+<h3 id="mvvm对开发者有什么好处"><a href="#mvvm对开发者有什么好处" class="headerlink" title="mvvm对开发者有什么好处"></a>mvvm对开发者有什么好处</h3><ul>
+<li>低耦合。</li>
+<li>视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</li>
+<li>可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</li>
+<li>独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计。</li>
+<li>可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写</li>
+<li>易用灵活高效</li>
+</ul>
+<h3 id="v-model原理"><a href="#v-model原理" class="headerlink" title="v-model原理"></a>v-model原理</h3><ul>
+<li>也就是说， v-model=”sth” 是 v-bind:value=”sth” @input=”sth = $event.target.value” 的缩写。</li>
+</ul>
+<h3 id="es6哪些新特性"><a href="#es6哪些新特性" class="headerlink" title="es6哪些新特性"></a>es6哪些新特性</h3><ul>
+<li>字符串模版</li>
+<li>解构</li>
+<li>对象字面量写法</li>
+<li>箭头函数</li>
+<li>字符串查找 inCludes</li>
+<li>promise</li>
+<li>class</li>
+<li>set</li>
+</ul>
+<h3 id="es7新特新"><a href="#es7新特新" class="headerlink" title="es7新特新"></a>es7新特新</h3><ul>
+<li>3 ** 2 求幂运算符</li>
+</ul>
+<h3 id="es8新特新"><a href="#es8新特新" class="headerlink" title="es8新特新"></a>es8新特新</h3><ul>
+<li>padStart padEnd 前后补充指定字符串  </li>
+<li>‘aabbc’.padStart(6,’x’);  //xaabbc</li>
+<li>Object.entries</li>
+<li>Object.values</li>
+<li>async await</li>
+</ul>
+<h3 id="数组有哪些操作方法"><a href="#数组有哪些操作方法" class="headerlink" title="数组有哪些操作方法"></a>数组有哪些操作方法</h3><ul>
+<li>push 后添加</li>
+<li>pop 后删除 </li>
+<li>unshift 开头</li>
+<li>shift 开头删除</li>
+<li>splice(index,1,xx) 替换或删除数组，改变原数组 </li>
+<li>slice(start,end) 截取数组，不改变原数组</li>
+<li>concat 数组拼接</li>
+<li>foreach遍历</li>
+<li>arr.reduce</li>
+<li>arr.map</li>
+<li>arr.filter 数组过滤</li>
+<li>arr.sort 排序</li>
+<li>arr.some</li>
+</ul>
+<h3 id="如何优化性能"><a href="#如何优化性能" class="headerlink" title="如何优化性能"></a>如何优化性能</h3><ul>
+<li>资源压缩合并，减少http请求</li>
+<li>异步加载</li>
+<li>添加浏览器缓存</li>
+<li>使用cdn</li>
+</ul>
+<h3 id="vue生命周期"><a href="#vue生命周期" class="headerlink" title="vue生命周期"></a>vue生命周期</h3><ul>
+<li>beforeCreate</li>
+<li>created</li>
+<li>beforeMount</li>
+<li>mounted</li>
+<li>beforeUpdate</li>
+<li>updated</li>
+<li>beforeDestory</li>
+<li>destoryed</li>
+</ul>
+<h3 id="router-beforeEach"><a href="#router-beforeEach" class="headerlink" title="router  beforeEach"></a>router  beforeEach</h3><ul>
+<li>监听路由，可以进行拦截重定向等操作</li>
+</ul>
+<h3 id="小程序跳转方式"><a href="#小程序跳转方式" class="headerlink" title="小程序跳转方式"></a>小程序跳转方式</h3><ul>
+<li>navigateTo</li>
+<li>redirectTo</li>
+<li>relaunch</li>
+<li>navigateBack</li>
+<li>switchTab</li>
+</ul>
+<h3 id="小程序生命周期"><a href="#小程序生命周期" class="headerlink" title="小程序生命周期"></a>小程序生命周期</h3><p>  1、进入A页面：A执行onLoad()–&gt;onShow()–&gt;onReady()；<br>  2、A页面navigateTo B页面：A执行onHide()，B执行onLoad()–&gt;onShow()–&gt;onReady()；<br>  3、B页面返回A页面：B执行onUnload()，A执行onShow()；<br>  4、退出A页面：A执行onUnload()。</p>
+<h3 id="v-if-v-show区别"><a href="#v-if-v-show区别" class="headerlink" title="v-if v-show区别"></a>v-if v-show区别</h3><ul>
+<li>v-if按照条件是否渲染，v-show是display的block或none</li>
+</ul>
+<h3 id="vue几种常见指令"><a href="#vue几种常见指令" class="headerlink" title="vue几种常见指令"></a>vue几种常见指令</h3><ul>
+<li>v-for 、 v-if 、v-bind、v-on、v-show、v-else、v-model、v-html</li>
+</ul>
+<h3 id="es8新特性"><a href="#es8新特性" class="headerlink" title="es8新特性"></a>es8新特性</h3><ul>
+<li>async await</li>
+<li>padStart padEnd</li>
+<li>Object.entries() 把对象或字符串转成数组</li>
+<li>Object.values()</li>
+</ul>
+<h3 id="vue跨域解决"><a href="#vue跨域解决" class="headerlink" title="vue跨域解决"></a>vue跨域解决</h3><pre><code class="js">module.exports = {
+    // 是否使用带有浏览器内核编译器的完整构建版本
+    runtimeCompiler: false,
+    // 基本路径
+    publicPath: &#39;./&#39;,
+    //map文件
+    productionSourceMap: false,
+    // 构建时的输出目录
+    outputDir: &#39;dist&#39;,
+    //放置静态资源的目录
+    assetsDir: &#39;static&#39;,
+    //html的输出路径
+    indexPath: &#39;index.html&#39;,
+    // 文件名哈希值
+    filenameHashing: true,
+    devServer: {
+        host: &#39;192.168.1.108&#39;,
+        port: 8088,
+        https: false,
+        // 自启动浏览器
+        open: false,
+        // 跨域
+        proxy: {
+            &#39;/api&#39;: {
+                target: &#39;http://v.juhe.cn&#39;,
+                changeOrigin: true,
+                ws: true,
+                secure: false,
+                pathRewrite: {
+                    &#39;^/api&#39;: &#39;&#39;
+                },
+                disableHostCheck: true
+            }
+        }
+    },
+
+    // 清除console.log
+    configureWebpack: (config) =&gt; {
+        if (process.env.NODE_ENV === &#39;production&#39;) {
+            config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+        }
+    }
+}
+
+</code></pre>
+<h3 id="reduce操作方法"><a href="#reduce操作方法" class="headerlink" title="reduce操作方法"></a>reduce操作方法</h3><pre><code class="js">
+// arr 表示原数组；
+// prev 表示上一次调用回调时的返回值，或者初始值 init;
+// cur 表示当前正在处理的数组元素；
+// index 表示当前正在处理的数组元素的索引，若提供 init 值，则索引为0，否则索引为1；
+// init 表示初始值。
+
+var sum = arr.reduce((prev, cur) =&gt; {
+    return prev + cur;
+},0);
+
+// 重复次数计算
+let names = [&#39;AAA&#39;, &#39;BBB&#39;, &#39;CCC&#39;, &#39;DDD&#39;, &#39;AAA&#39;];
+let nameNum = names.reduce((pre, cur) =&gt; {
+cur in pre ? pre[cur] += 1 : pre[cur] = 1
+  return pre
+}, {})
+console.log(nameNum); // {AAA: 2, BBB: 1, CCC: 1, DDD: 1}
+
+//数组去重
+let names = [&#39;AAA&#39;, &#39;BBB&#39;, &#39;CCC&#39;, &#39;DDD&#39;, &#39;AAA&#39;];
+let nameNum1 = names.reduce((pre, cur, index) =&gt; {
+pre.includes(cur) ? &#39;&#39; : pre.push(cur)
+  return pre
+}, [])
+console.log(nameNum1);  // [&quot;AAA&quot;, &quot;BBB&quot;, &quot;CCC&quot;, &quot;DDD&quot;]
+
+//数组对象去重，转为数组
+const names2 = [
+      { name: &#39;AAA&#39; },
+      { name: &#39;BBB&#39; },
+      { name: &#39;DDD&#39; },
+      { name: &#39;CCC&#39; },
+      { name: &#39;EEE&#39; },
+      { name: &#39;AAA&#39; },
+    ];
+
+      let nameNum2 = names2.reduce((pre, cur, index) =&gt; {
+      pre.includes(cur.name) ? &#39;&#39; : pre.push(cur.name)
+      return pre
+    }, [])
+    console.log(nameNum2);  //  [&quot;AAA&quot;, &quot;BBB&quot;, &quot;DDD&quot;, &quot;CCC&quot;, &quot;EEE&quot;]
+
+
+//对象去重
+ const names2 = [
+     { name: &#39;AAA&#39; },
+     { name: &#39;BBB&#39; },
+     { name: &#39;DDD&#39; },
+     { name: &#39;CCC&#39; },
+     { name: &#39;EEE&#39; },
+     { name: &#39;AAA&#39; },
+   ]
+
+   let obj = {}
+   let nameNum3 = names2.reduce((pre, cur) =&gt; {
+     obj[cur.name] ? &#39;&#39; : obj[cur.name] = true &amp;&amp; pre.push(cur)
+     return pre
+    }, [])
+    console.log(nameNum3);  // [{ name: &#39;AAA&#39; },{ name: &#39;BBB&#39; },{ name: &#39;DDD&#39; },{ name: &#39;CCC&#39; },{ name: &#39;EEE&#39; }]
+
+</code></pre>
+<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><ul>
+<li>200</li>
+<li>404</li>
+<li>502 网关错误</li>
+<li>500 服务器内部错误</li>
+<li>504 请求超时</li>
+</ul>
+<h3 id="vue双向数据绑定的原理是什么"><a href="#vue双向数据绑定的原理是什么" class="headerlink" title="vue双向数据绑定的原理是什么"></a>vue双向数据绑定的原理是什么</h3><p>首先传输对象的双向数据绑定 Object.defineProperty(target, key, decription),在decription中设置get和set属性（此时应注意description中get和set不能与描述属性共存）<br>数组的实现与对象不同。<br>同时运用观察者模式实现wather，用户数据和view视图的更新</p>
+<h3 id="闭包的好处"><a href="#闭包的好处" class="headerlink" title="闭包的好处"></a>闭包的好处</h3><ul>
+<li>(1)希望一个变量长期驻扎在内存当中(不被垃圾回收机制回收)</li>
+<li>(2)避免全局变量的污染</li>
+<li>(3)私有成员的存在</li>
+<li>(4)安全性提高</li>
+</ul>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://data.littlechai.cn/alipay2.png"></li>
+                <li class="wechat-code"><img src="https://data.littlechai.cn/wx2.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <!-- <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer> -->
+        <!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/10/20/vue常见面试题/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://data.littlechai.cn/bg_load2.svg" data-src="http://data.littlechai.cn/blog_bg34.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://data.littlechai.cn/blog_bg34.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Vue常见面试题整理</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/03/12/ES6,ES7,ES8常用新特性/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://data.littlechai.cn/bg_load2.svg" data-src="http://data.littlechai.cn/blog_bg27.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://data.littlechai.cn/blog_bg27.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                ES6,ES7,ES8常用新特性</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<style>
+  .toc-container {
+    display: none;
+  }
+</style>
+<script>
+  window.onload = function(){
+      var valine = new Valine({
+        visitor: true // 阅读量统计
+      });
+      valine.init({
+        el: '#vcomments',
+        appId: "WAr0wBCXxXy76TX9VsNrvb18-9Nh9j0Va",
+        appKey: "awPQ580xAspEQJor3vdWQyjd",
+        path: window.location.pathname,
+        placeholder: "没时间了，快上车吧~"
+      })
+  }
+</script>
+
+
+<!--  -->
+      <section class="author-profile">
+        <!-- <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="/" class="profile gravatar"><img src="http://data.littlechai.cn/xcc.png" itemprop="image" alt="LittleChai" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="/" itemprop="url" rel="author">LittleChai</a>
+            </h3>
+          </div>
+        </div> -->
+        <!-- <hr> -->
+        <!-- <p><i class="iconfont icon-write"></i></p> -->
+        <p> <a href="/">回到主页</a>  </p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 LittleChai<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <!-- <p style="color: #666666;">&copy 2019</p> -->
+    </div>
+
+
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
+        <span style="color: #b9b9b9;"> &copy 2019~2020
+          <span>LittleChai,Powered by Hexo</span>
+            <!-- <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank"
+            style="color: #b9b9b9;">powered by hexo</a>  -->
+            <!-- by  -->
+            <!-- <a href="https://2heng.xin/" target="_blank"
+            style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a
+            href="https://www.hojun.cn/" target="_blank"
+            style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo,
+          Hosted by Coding Pages</a> -->
+        </span>
+        <p id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次|本站总访客数<span id="busuanzi_value_site_uv"></span>人</p>
+        <p style="margin: 5px;"><span id="timeDate"></span><span id="times"></span></p>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script type="text/javascript" src='/js/time.js'></script>
+<script type="text/javascript" src='/js/lazyCreate.js'></script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<!-- <script type="text/javascript" src="/js/viewer.js"></script> -->
+<!-- <script type="text/javascript" src="/js/jquery-viewer.js"></script> -->
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<!-- gitalk -->
+
+<!-- 不蒜子 网页计数器 -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://data.littlechai.cn/xcc.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">LittleChai</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/littleChai" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/lesses" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="tencent://message/?uin=767733103" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-tada" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-tada" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/book/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-book faa-tada" aria-hidden="true"></i>
+            书集
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/photo/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-photo faa-tada" aria-hidden="true"></i>
+            图集
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/bangumi/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-film faa-vertical faa-tada" aria-hidden="true"></i>
+            番组
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/music/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-headphones faa-tada" aria-hidden="true"></i>
+            歌单
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            个人简介
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 powered by hexo</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<div class="aplayer"
+
+    data-id="5004753619"
+
+    data-server="netease"
+
+    data-type="playlist"
+
+    data-fixed="true"
+
+    data-autoplay="false"
+
+    data-loop="all"
+
+    data-order="random"
+
+    data-preload="auto"
+
+    data-volume="0.7"
+
+    data-mutex="true"
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>

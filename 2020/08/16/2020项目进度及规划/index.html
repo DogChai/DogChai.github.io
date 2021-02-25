@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">2020项目进度及规划 | LittleChai的博客</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  <!-- <link href="/css/viewer.css" rel="stylesheet"> -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/fontawesome.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "LittleChai";
+  mashiro_option.author_name = "";
+  mashiro_option.site_url = "/";
+  mashiro_option.v_appId = "WAr0wBCXxXy76TX9VsNrvb18-9Nh9j0Va";
+  mashiro_option.v_appKey = "awPQ580xAspEQJor3vdWQyjd";
+  mashiro_option.mathjax = "1";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "http://data.littlechai.cn/blog_bg1.jpg,http://data.littlechai.cn/blog_bg2.jpg,http://data.littlechai.cn/blog_bg3.jpg,http://data.littlechai.cn/blog_bg4.jpg,http://data.littlechai.cn/blog_bg5.jpg,http://data.littlechai.cn/blog_bg9.jpg,http://data.littlechai.cn/blog_bg10.png,http://data.littlechai.cn/blog_bg12.jpg,http://data.littlechai.cn/blog_bg13.jpg,http://data.littlechai.cn/blog_bg14.jpg,http://data.littlechai.cn/blog_bg15.jpg,http://data.littlechai.cn/blog_bg16.jpg,http://data.littlechai.cn/blog_bg17.jpg,http://data.littlechai.cn/blog_bg18.jpg,http://data.littlechai.cn/blog_bg19.jpg,http://data.littlechai.cn/blog_bg20.jpg,http://data.littlechai.cn/blog_bg28.jpg,http://data.littlechai.cn/blog_bg29.jpg,http://data.littlechai.cn/blog_bg32.jpg,http://data.littlechai.cn/blog_bg33.jpg,http://data.littlechai.cn/blog_bg34.png".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+
+  <style>
+    @keyframes loadDiv {
+
+      0%,
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .loadFade {
+      opacity: 1;
+      transition: all .5s linear;
+      transition-delay: 1s;
+    }
+
+    .loader {
+      background: #131313;
+      /* background: radial-gradient(rgb(235, 235, 235), rgb(255, 255, 255)); */
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      position: fixed;
+      /* right: 0; */
+      top: 0;
+      width: 100%;
+      z-index: 99999;
+      transform: translateX(0%);
+      transition: all 0.5s linear;
+    }
+
+    .loader-inner {
+      bottom: 0;
+      height: 60px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+    }
+
+    .loader-line-wrap {
+      -webkit-animation:
+        spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+      animation:
+        spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+      box-sizing: border-box;
+      height: 50px;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      width: 100px;
+    }
+
+    .loader-line {
+      border: 4px solid transparent;
+      border-radius: 100%;
+      box-sizing: border-box;
+      height: 100px;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+    }
+
+    .loader-line-wrap:nth-child(1) {
+      -webkit-animation-delay: -50ms;
+      animation-delay: -50ms;
+    }
+
+    .loader-line-wrap:nth-child(2) {
+      -webkit-animation-delay: -100ms;
+      animation-delay: -100ms;
+    }
+
+    .loader-line-wrap:nth-child(3) {
+      -webkit-animation-delay: -150ms;
+      animation-delay: -150ms;
+    }
+
+    .loader-line-wrap:nth-child(4) {
+      -webkit-animation-delay: -200ms;
+      animation-delay: -200ms;
+    }
+
+    .loader-line-wrap:nth-child(5) {
+      -webkit-animation-delay: -250ms;
+      animation-delay: -250ms;
+    }
+
+    .loader-line-wrap:nth-child(1) .loader-line {
+      border-color: rgb(215, 104, 157);
+      height: 90px;
+      width: 90px;
+      top: 7px;
+    }
+
+    .loader-line-wrap:nth-child(2) .loader-line {
+      border-color: rgb(93, 164, 220);
+      height: 76px;
+      width: 76px;
+      top: 14px;
+    }
+
+    .loader-line-wrap:nth-child(3) .loader-line {
+      border-color: rgb(243, 211, 55);
+      height: 62px;
+      width: 62px;
+      top: 21px;
+    }
+
+    .loader-line-wrap:nth-child(4) .loader-line {
+      border-color: rgb(107, 192, 72);
+      height: 48px;
+      width: 48px;
+      top: 28px;
+    }
+
+    .loader-line-wrap:nth-child(5) .loader-line {
+      border-color: rgb(238, 90, 48);
+      height: 34px;
+      width: 34px;
+      top: 35px;
+    }
+
+    @-webkit-keyframes spin {
+
+      0%,
+      15% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+
+      0%,
+      15% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script>
+    document.onreadystatechange = function () {
+      var loadTimer = null;
+      if (document.readyState == "complete") {
+        $('#loader').animate({
+          width: '-100%'
+        }, 500,'swing', function () {})
+      }
+    }
+  </script>
+</head>
+
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+</div></html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="/">
+          <img src="http://data.littlechai.cn/xcc.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>2020年我也要加油鸭~</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/littlechai" target="_blank" class="social-github" title="github">
+                    <img src="http://data.littlechai.cn/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://music.163.com/#/user/home?id=62879556" target="_blank" class="social-github" title="网易云">
+                    <img src="http://data.littlechai.cn/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="mailto:767733103@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="http://data.littlechai.cn/email.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">LittleChai</span>
+            <span class="shironeko"></span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-tada" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-tada" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/book/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-book faa-tada" aria-hidden="true"></i>
+                    书集
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/photo/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-photo faa-tada" aria-hidden="true"></i>
+                    图集
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-film faa-vertical faa-tada" aria-hidden="true"></i>
+                    番组
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-headphones faa-tada" aria-hidden="true"></i>
+                    歌单
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    个人简介
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<script src="/js/lazyCreate.js"></script>
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://data.littlechai.cn/blog_bg34.png);" src="http://data.littlechai.cn/bg_load2.svg" data-src="http://data.littlechai.cn/blog_bg34.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      2020项目进度及规划</h1>
+      <p class="entry-census">
+        <span>
+          <a href="/">
+            <img src="http://data.littlechai.cn/xcc.png">
+          </a>
+        </span>
+        <span>
+          <a href="/">LittleChai</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-8-16<span class="bull">
+        ·</span>
+        <span id="busuanzi_value_page_pv"></span>次阅读
+
+        <!-- <span id="2020项目进度及规划" class="leancloud_visitors" data-flag-title="2020项目进度及规划">
+          <em class="post-meta-item-text">阅读量 </em>
+          <span class="leancloud-visitors-count"></span>
+        </span> -->
+
+    </p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h3 id="近期目标"><a href="#近期目标" class="headerlink" title="近期目标"></a>近期目标</h3><h4 id="公司H5答题1，2年级争取上线"><a href="#公司H5答题1，2年级争取上线" class="headerlink" title="公司H5答题1，2年级争取上线"></a>公司H5答题1，2年级争取上线</h4><ul>
+<li>计划功能完善并上线</li>
+<li>优化加载速度</li>
+<li>权限优化</li>
+<li>推进中<br><br></li>
+</ul>
+<h4 id="ColorPicker-Vue重构"><a href="#ColorPicker-Vue重构" class="headerlink" title="ColorPicker Vue重构"></a>ColorPicker Vue重构</h4><ul>
+<li>项目地址：<a href="https://color.littlechai.cn" target="_blank" rel="noopener">https://color.littlechai.cn</a></li>
+<li>使用最新版Vue3进行重构</li>
+<li>优化界面，添加一些新功能</li>
+<li>计划中<br><br></li>
+</ul>
+<h3 id="长远目标"><a href="#长远目标" class="headerlink" title="长远目标"></a>长远目标</h3><h4 id="小柴日记簿微信小程序-重构"><a href="#小柴日记簿微信小程序-重构" class="headerlink" title="小柴日记簿微信小程序(重构)"></a>小柴日记簿微信小程序(重构)</h4><ul>
+<li>云开发后端API接口：当前接口太过于复杂繁琐，导致后期开发维护难度太大，需要统一接口名称，功能性</li>
+<li>前端组件：所使用的多个UI组件库，导致可能会存在界面不统一的情况，后面将会使用ColorUi统一重写</li>
+<li>前端样式: 目前样式太过单一，界面简陋，后面界面会全部重新配色，添加一些新功能&amp;彩蛋</li>
+<li>后台：添加个人后台界面，便于查看自己日记的访问数量，留言审核等等…</li>
+<li>计划中，争取年底完成上线<br><br></li>
+</ul>
+<h4 id="音乐网站-重构"><a href="#音乐网站-重构" class="headerlink" title="音乐网站(重构)"></a>音乐网站(重构)</h4><ul>
+<li>小柴音乐站将会重构</li>
+<li>具体内容还在思考中<br><br></li>
+</ul>
+<h4 id="每日单词计划"><a href="#每日单词计划" class="headerlink" title="每日单词计划"></a>每日单词计划</h4><ul>
+<li>争取年底词汇量+2000 </li>
+</ul>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="http://data.littlechai.cn/alipay2.png"></li>
+                <li class="wechat-code"><img src="http://data.littlechai.cn/wx2.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <!-- <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer> -->
+        <!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/10/20/vue常见面试题/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="http://data.littlechai.cn/bg_load2.svg" data-src="http://data.littlechai.cn/blog_bg34.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://data.littlechai.cn/blog_bg34.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Vue常见面试题整理</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/05/10/面试题合集/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="http://data.littlechai.cn/bg_load2.svg" data-src="http://data.littlechai.cn/blog_bg33.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://data.littlechai.cn/blog_bg33.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                面试题合集</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<style>
+  .toc-container {
+    display: none;
+  }
+</style>
+<script>
+  window.onload = function(){
+      var valine = new Valine({
+        visitor: true // 阅读量统计
+      });
+      valine.init({
+        el: '#vcomments',
+        appId: "WAr0wBCXxXy76TX9VsNrvb18-9Nh9j0Va",
+        appKey: "awPQ580xAspEQJor3vdWQyjd",
+        path: window.location.pathname,
+        placeholder: "没时间了，快上车吧~"
+      })
+  }
+</script>
+
+
+<!--  -->
+      <section class="author-profile">
+        <!-- <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="/" class="profile gravatar"><img src="http://data.littlechai.cn/xcc.png" itemprop="image" alt="LittleChai" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="/" itemprop="url" rel="author">LittleChai</a>
+            </h3>
+          </div>
+        </div> -->
+        <!-- <hr> -->
+        <!-- <p><i class="iconfont icon-write"></i></p> -->
+        <p> <a href="/">回到主页</a>  </p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 LittleChai<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <!-- <p style="color: #666666;">&copy 2019</p> -->
+    </div>
+
+
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
+        <span style="color: #b9b9b9;"> &copy 2019~2020
+          <span>LittleChai,Powered by Hexo</span>
+            <!-- <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank"
+            style="color: #b9b9b9;">powered by hexo</a>  -->
+            <!-- by  -->
+            <!-- <a href="https://2heng.xin/" target="_blank"
+            style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a
+            href="https://www.hojun.cn/" target="_blank"
+            style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo,
+          Hosted by Coding Pages</a> -->
+        </span>
+        <p id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次|本站总访客数<span id="busuanzi_value_site_uv"></span>人</p>
+        <p style="margin: 5px;"><span id="timeDate"></span><span id="times"></span></p>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script type="text/javascript" src='/js/time.js'></script>
+<script type="text/javascript" src='/js/lazyCreate.js'></script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<!-- <script type="text/javascript" src="/js/viewer.js"></script> -->
+<!-- <script type="text/javascript" src="/js/jquery-viewer.js"></script> -->
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<!-- gitalk -->
+
+<!-- 不蒜子 网页计数器 -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="http://data.littlechai.cn/xcc.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">LittleChai</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/littleChai" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/lesses" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="tencent://message/?uin=767733103" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-tada" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-tada" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/book/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-book faa-tada" aria-hidden="true"></i>
+            书集
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/photo/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-photo faa-tada" aria-hidden="true"></i>
+            图集
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/bangumi/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-film faa-vertical faa-tada" aria-hidden="true"></i>
+            番组
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/music/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-headphones faa-tada" aria-hidden="true"></i>
+            歌单
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            个人简介
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 powered by hexo</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<div class="aplayer"
+
+    data-id="5004753619"
+
+    data-server="netease"
+
+    data-type="playlist"
+
+    data-fixed="true"
+
+    data-autoplay="false"
+
+    data-loop="all"
+
+    data-order="random"
+
+    data-preload="auto"
+
+    data-volume="0.7"
+
+    data-mutex="true"
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>

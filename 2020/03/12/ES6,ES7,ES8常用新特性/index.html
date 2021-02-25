@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">ES6,ES7,ES8常用新特性 | LittleChai的博客</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  <!-- <link href="/css/viewer.css" rel="stylesheet"> -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/fontawesome.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "LittleChai";
+  mashiro_option.author_name = "";
+  mashiro_option.site_url = "/";
+  mashiro_option.v_appId = "WAr0wBCXxXy76TX9VsNrvb18-9Nh9j0Va";
+  mashiro_option.v_appKey = "awPQ580xAspEQJor3vdWQyjd";
+  mashiro_option.mathjax = "1";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://data.littlechai.cn/blog_bg1.jpg,https://data.littlechai.cn/blog_bg2.jpg,https://data.littlechai.cn/blog_bg3.jpg,https://data.littlechai.cn/blog_bg4.jpg,https://data.littlechai.cn/blog_bg5.jpg,https://data.littlechai.cn/blog_bg9.jpg,https://data.littlechai.cn/blog_bg10.png,https://data.littlechai.cn/blog_bg12.jpg,https://data.littlechai.cn/blog_bg13.jpg,https://data.littlechai.cn/blog_bg14.jpg,https://data.littlechai.cn/blog_bg15.jpg,https://data.littlechai.cn/blog_bg16.jpg,https://data.littlechai.cn/blog_bg17.jpg,https://data.littlechai.cn/blog_bg18.jpg,https://data.littlechai.cn/blog_bg19.jpg,https://data.littlechai.cn/blog_bg20.jpg,https://data.littlechai.cn/blog_bg28.jpg,https://data.littlechai.cn/blog_bg29.jpg,https://data.littlechai.cn/blog_bg32.jpg,https://data.littlechai.cn/blog_bg33.jpg,https://data.littlechai.cn/blog_bg34.png".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+
+  <style>
+    @keyframes loadDiv {
+
+      0%,
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .loadFade {
+      opacity: 1;
+      transition: all .5s linear;
+      transition-delay: 1s;
+    }
+
+    .loader {
+      background: #0c0c0c;
+      /* background: radial-gradient(rgb(235, 235, 235), rgb(255, 255, 255)); */
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      position: fixed;
+      /* right: 0; */
+      top: 0;
+      width: 100%;
+      z-index: 99999;
+      transform: translateX(0%);
+      transition: all 0.4s linear;
+    }
+
+    .loader-inner {
+      bottom: 0;
+      height: 60px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+    }
+
+    .loader-line-wrap {
+      -webkit-animation:
+        spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+      animation:
+        spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+      box-sizing: border-box;
+      height: 50px;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      width: 100px;
+    }
+
+    .loader-line {
+      border: 4px solid transparent;
+      border-radius: 100%;
+      box-sizing: border-box;
+      height: 100px;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+    }
+
+    .loader-line-wrap:nth-child(1) {
+      -webkit-animation-delay: -50ms;
+      animation-delay: -50ms;
+    }
+
+    .loader-line-wrap:nth-child(2) {
+      -webkit-animation-delay: -100ms;
+      animation-delay: -100ms;
+    }
+
+    .loader-line-wrap:nth-child(3) {
+      -webkit-animation-delay: -150ms;
+      animation-delay: -150ms;
+    }
+
+    .loader-line-wrap:nth-child(4) {
+      -webkit-animation-delay: -200ms;
+      animation-delay: -200ms;
+    }
+
+    .loader-line-wrap:nth-child(5) {
+      -webkit-animation-delay: -250ms;
+      animation-delay: -250ms;
+    }
+
+    .loader-line-wrap:nth-child(1) .loader-line {
+      border-color: rgb(215, 104, 157);
+      height: 90px;
+      width: 90px;
+      top: 7px;
+    }
+
+    .loader-line-wrap:nth-child(2) .loader-line {
+      border-color: rgb(93, 164, 220);
+      height: 76px;
+      width: 76px;
+      top: 14px;
+    }
+
+    .loader-line-wrap:nth-child(3) .loader-line {
+      border-color: rgb(243, 211, 55);
+      height: 62px;
+      width: 62px;
+      top: 21px;
+    }
+
+    .loader-line-wrap:nth-child(4) .loader-line {
+      border-color: rgb(107, 192, 72);
+      height: 48px;
+      width: 48px;
+      top: 28px;
+    }
+
+    .loader-line-wrap:nth-child(5) .loader-line {
+      border-color: rgb(238, 90, 48);
+      height: 34px;
+      width: 34px;
+      top: 35px;
+    }
+
+    @-webkit-keyframes spin {
+
+      0%,
+      15% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+
+      0%,
+      15% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script>
+    document.onreadystatechange = function () {
+      var loadTimer = null;
+      if (document.readyState == "complete") {
+        $('#loader').animate({
+          width: '-100%'
+        }, 500,'swing', function () {})
+      }
+    }
+  </script>
+</head>
+
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+</div></html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="/">
+          <img src="https://data.littlechai.cn/xcc.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>2021年我也会继续努力的~</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/littlechai" target="_blank" class="social-github" title="github">
+                    <img src="https://data.littlechai.cn/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://music.163.com/#/user/home?id=62879556" target="_blank" class="social-github" title="网易云">
+                    <img src="https://data.littlechai.cn/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="mailto:767733103@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="https://data.littlechai.cn/email.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">LittleChai</span>
+            <span class="shironeko"></span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-tada" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-tada" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/book/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-book faa-tada" aria-hidden="true"></i>
+                    书集
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/photo/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-photo faa-tada" aria-hidden="true"></i>
+                    图集
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-film faa-vertical faa-tada" aria-hidden="true"></i>
+                    番组
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-headphones faa-tada" aria-hidden="true"></i>
+                    歌单
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    个人简介
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<script src="/js/lazyCreate.js"></script>
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://data.littlechai.cn/blog_bg27.jpg);" src="https://data.littlechai.cn/bg_load2.svg" data-src="http://data.littlechai.cn/blog_bg27.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      ES6,ES7,ES8常用新特性</h1>
+      <p class="entry-census">
+        <span>
+          <a href="/">
+            <img src="http://data.littlechai.cn/xcc.png">
+          </a>
+        </span>
+        <span>
+          <a href="/">LittleChai</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-12<span class="bull">
+        ·</span>
+        <span id="busuanzi_value_page_pv"></span>次阅读
+
+        <!-- <span id="ES6,ES7,ES8常用新特性" class="leancloud_visitors" data-flag-title="ES6,ES7,ES8常用新特性">
+          <em class="post-meta-item-text">阅读量 </em>
+          <span class="leancloud-visitors-count"></span>
+        </span> -->
+
+    </p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="ES6特性"><a href="#ES6特性" class="headerlink" title="ES6特性"></a>ES6特性</h2><h3 id="const-let变量"><a href="#const-let变量" class="headerlink" title="const,let变量"></a>const,let变量</h3><p><strong>关于使用let与const规则:</strong></p>
+<ul>
+<li>使用let声明的变量可以重新赋值,但是不能在同一作用域内重新声明</li>
+<li>使用const声明的变量必须赋值初始化,但是不能在同一作用域类重新声明也无法重新赋值</li>
+</ul>
+<pre><code class="JavaScript">
+let a = 1;
+const b = 2;
+
+</code></pre>
+<h3 id="模板字面量"><a href="#模板字面量" class="headerlink" title="模板字面量"></a>模板字面量</h3><p><strong>在ES6之前,将字符串连接到一起的方法是+或者concat()方法</strong><br><strong>而现在可以使用 `` 语法</strong></p>
+<pre><code class="JavaScript">//之前
+let name = &#39;tom&#39;;
+let age = 12;
+let str = name+&#39; is &#39;+age+&#39; years old&#39;;
+
+//现在
+let name = &#39;tom&#39;;
+let age = 12;
+let str = `${name} is ${age} years old`;
+
+</code></pre>
+<h3 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h3><p><strong>在ES6中,可以使用解构从数组和对象提取值并赋值给独特的变量</strong><br><strong>解构数组</strong></p>
+<pre><code class="JavaScript">
+let arr = [12,23,34];
+let [a,b,c] = arr;
+console.log(a,b,c); //12,23,34
+
+let [a,[b,c],d] = [1,[2,3],4];
+
+
+// 解构赋值默认值
+let [bol = true] = [] //true
+
+// 字符串解构赋值
+let [a,b,c,d,e,f,g] = &#39;qwertyu&#39;;
+
+</code></pre>
+<p><strong>[]表示被解构的数组, a,b,c表示要将数组中的值存储在其中的变量, 在解构数组是, 还可以忽略值, 例如const[a,,c]=arr,忽略b坐标.</strong></p>
+<p><strong>解构对象</strong></p>
+<pre><code class="JavaScript">
+let obj = {
+  name: &#39;tom&#39;,
+  age: 20,
+  sex: &#39;男&#39;
+};
+let {name,age,sex} = obj;
+console.log(name,age,sex); //tom,20,男
+
+</code></pre>
+<p><strong>花括号 { } 表示被解构的对象，name、age 和 sex 表示要将对象中的属性存储到其中的变量</strong></p>
+<h3 id="对象字面量简写法"><a href="#对象字面量简写法" class="headerlink" title="对象字面量简写法"></a>对象字面量简写法</h3><pre><code class="JavaScript">
+let name = &#39;tom&#39;;
+let age = 12;
+let sex = &#39;男&#39;;
+
+let people = {
+  name: name,
+  age: age,
+  sex: sex
+};
+console.log(people);
+/*
+{
+  age: 12
+  name: &quot;tom&quot;
+  sex: &quot;男&quot;
+  }
+*/
+
+</code></pre>
+<p><strong>使用和所分配的变量名称相同的名称初始化对象时</strong><br><strong>如果属性名称和所分配的变量名称一样，那么就可以从对象属性中删掉这些重复的变量名称。</strong></p>
+<pre><code class="JavaScript">
+let name = &#39;tom&#39;;
+let age = 12;
+let sex = &#39;男&#39;;
+let people = {name,age,sex};
+console.log(people)
+/*
+{
+  age: 12
+  name: &quot;tom&quot;
+  sex: &quot;男&quot;
+  }
+*/
+
+</code></pre>
+<p><strong>简写方法的名称:</strong></p>
+<pre><code class="JavaScript">
+let gemstone = {
+  name,
+  age,
+  sex,
+  fn() { ... }
+};
+
+</code></pre>
+<h3 id="ES6箭头函数"><a href="#ES6箭头函数" class="headerlink" title="ES6箭头函数"></a>ES6箭头函数</h3><pre><code class="JavaScript">
+let fn = (a,b) =&gt; {
+  console.log(a,b)
+}
+fn(1,2);
+
+</code></pre>
+<h3 id="字符串查找"><a href="#字符串查找" class="headerlink" title="字符串查找"></a>字符串查找</h3><pre><code class="JavaScript">
+let str = &#39;sky&#39;;
+let strs = &#39;I see a bird in the sky&#39;;
+strs.inCludes(str) //true
+
+//判断开头是否存在
+strs.startsWith(str)
+
+//判断结尾是否存在
+strs.endsWith(str)
+
+//复制字符串
+str.repeat(2) //skysky
+
+</code></pre>
+<h3 id="数字验证"><a href="#数字验证" class="headerlink" title="数字验证"></a>数字验证</h3><pre><code class="JavaScript">
+//验证是否是数字，整数，小数都可以
+Number.isFinite(12) //true
+Number.isFinite(12.12) //true
+
+//NaN验证
+Number.isNaN(NaN) //true
+
+//判断是否为整数
+Number.isInteger(12.12) //false
+
+//整数转换
+Number.parseInt(12.12) //12
+
+//浮点数转换
+Number.parseFloat(12)
+
+</code></pre>
+<h3 id="JSON数组格式转换"><a href="#JSON数组格式转换" class="headerlink" title="JSON数组格式转换"></a>JSON数组格式转换</h3><pre><code class="JavaScript">
+let  json = {
+    &#39;0&#39;: &#39;one&#39;,
+    &#39;1&#39;: &#39;two&#39;,
+    &#39;2&#39;: &#39;three&#39;,
+    length:3
+}
+
+let arr = Array.from(json) 
+//[&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
+
+let arr =Array.of(3,4,5,6);
+console.log(arr);
+//[3,4,5,6]
+
+//fill填充
+let arr = [1,2,3,4,5];
+arr.fill(&#39;add&#39;,2,5);
+// 3,4,5被填充覆盖
+//[1, 2, &quot;add&quot;, &quot;add&quot;, &quot;add&quot;]
+
+//for...of循环
+let arr = [&#39;one&#39;,&#39;two&#39;,&#39;three&#39;];
+for(let item of arr) {
+  console.log(item)
+  //one
+  //two
+  //three
+}
+
+// 或得索引和元素
+let arr = [&#39;one&#39;,&#39;two&#39;,&#39;three&#39;];
+for(let [index,item] of arr.entries()) {
+  console.log(index,item)
+  //0,one
+  //1,two
+  //2,three
+}
+
+</code></pre>
+<h3 id="抛出错误"><a href="#抛出错误" class="headerlink" title="抛出错误"></a>抛出错误</h3><pre><code class="JavaScript">
+if(true) {
+  throw new Error(&#39;出错了&#39;)
+}
+
+</code></pre>
+<h3 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h3><pre><code class="JavaScript">
+let arr = [&#39;one&#39;,&#39;two&#39;,&#39;three&#39;,&#39;four&#39;,&#39;five&#39;]
+
+//forEach
+//forEach循环的特点是会自动省略为空的数组元素，相当于直接给我们筛空了。当是有时候也会给我们帮倒忙。
+arr.forEach((item,index) =&gt; {
+  console.log(item,index)
+})
+
+
+//filter 筛选
+let arr2 = arr.filter((item,index) =&gt; {
+  if(item != &#39;three&#39;) {
+    return true;
+  }
+})
+// [&#39;one&#39;,&#39;two&#39;,&#39;four&#39;,&#39;five&#39;]
+
+
+//some
+arr.some((item,index) =&gt; {
+  console.log(item,index)
+})
+
+
+//map
+arr.map(x=&gt;&#39;a&#39;)
+
+
+</code></pre>
+<h3 id="对象比较Object-is"><a href="#对象比较Object-is" class="headerlink" title="对象比较Object.is()"></a>对象比较Object.is()</h3><pre><code class="JavaScript">
+let obj1 = {
+  name: &#39;啦啦啦&#39;
+}
+let obj2 = {
+  name: &#39;啦啦啦&#39;
+}
+
+Object.is(obj1.name,obj2.name); //true
+
+console.log(+0 === -0);  //true
+console.log(NaN === NaN ); //false
+console.log(Object.is(+0,-0)); //false
+console.log(Object.is(NaN,NaN)); //true
+
+</code></pre>
+<h3 id="对象合并Object-assign"><a href="#对象合并Object-assign" class="headerlink" title="对象合并Object.assign()"></a>对象合并Object.assign()</h3><pre><code class="JavaScript">
+let obj1 = {
+  a: &#39;a1&#39;
+}
+
+let obj2 = {
+  b: &#39;b1&#39;
+}
+
+let obj3 = {
+  c: &#39;c1&#39;
+}
+
+let obj4 = Object.assign(obj1,obj2,obj3) //{a: &quot;a1&quot;, b: &quot;b1&quot;, c: &quot;c1&quot;}
+
+</code></pre>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><pre><code class="JavaScript">
+let setArr = new Set([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;a&#39;])
+//Set(3) {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}
+//会直接去重
+
+// 追加add
+// 删除delete
+// 查找has
+// 清空clear
+
+
+</code></pre>
+<h3 id="map"><a href="#map" class="headerlink" title="map***"></a>map***</h3><pre><code class="JavaScript">
+let json = {
+  name: &#39;lalala&#39;,
+  skill: &#39;web&#39;
+}
+console.log(json)
+
+var map = new Map();
+map.set(json,&#39;am&#39;);
+console.log(map);
+
+map.set(&#39;heihei&#39;,json);
+console.log(map);
+
+
+//增删查
+
+//get
+console.log(map.get(json))  //am
+console.log(map.get(&#39;heihei&#39;))  //json
+
+//delete删除特定
+map.delete(json);
+
+//删除全部
+map.clear();
+
+//size 返回数量
+map.size; //2
+
+//has查找，返回true,false
+map.has(&#39;heihei&#39;)  //true
+
+// set(),get(),delete(),clear(),size,has()
+
+</code></pre>
+<h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><pre><code class="JavaScript">
+let state = 1;
+function step1(resolve,reject) {
+  console.log(&#39;第一步&#39;)
+  if(state == 1) {
+    resolve(&#39;ok&#39;)
+  }
+  else {
+    reject(&#39;no&#39;)
+  }
+}
+
+function step2(resolve,reject) {
+  console.log(&#39;第二步&#39;)
+  if(state == 1) {
+    resolve(&#39;ok&#39;)
+  }
+  else {
+    reject(&#39;no&#39;)
+  }
+}
+
+function step3(resolve,reject) {
+  console.log(&#39;第三步&#39;)
+  if(state == 1) {
+    resolve(&#39;ok&#39;)
+  }
+  else {
+    reject(&#39;no&#39;)
+  }
+}
+
+new Promise(step1).then(function(val){
+  console.log(val)
+  return new Promise(step2);
+}).then(function(val){
+  console.log(val)
+  return new Promise(step3);
+}).then(function(val){
+  console.log(val)
+})
+
+
+</code></pre>
+<h3 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h3><pre><code class="JavaScript">
+class Coder{
+  constructor(a,b) {
+    this.a = a;
+    this.b = b;
+  }
+
+  name(val) {
+    console.log(val);
+    return val;
+  }
+
+  skill(val) {
+    console.log(this.name(&#39;god&#39;),val)
+  }
+
+  add() {
+    return this.a+this.b;
+  }
+
+}
+
+let littlechai = new Coder(&#39;aa&#39;,&#39;bb&#39;);
+littlechai.name(&#39;god&#39;);
+littlechai.skill(&#39;god&#39;);
+littlechai.add();
+
+
+// 继承
+class Htmler extends Coder{
+
+}
+
+let jicheng = new Htmler;
+jicheng.name(&#39;haha&#39;)
+
+</code></pre>
+<h2 id="ES7特性"><a href="#ES7特性" class="headerlink" title="ES7特性"></a>ES7特性</h2><h3 id="Array-prototype-includes-方法"><a href="#Array-prototype-includes-方法" class="headerlink" title="Array.prototype.includes()方法"></a>Array.prototype.includes()方法</h3><p><strong>includes()方法用来判断一个数组是否包含一个指定的值,根据情况,如果包含则返回true,否则返回false</strong><br><strong>Array.prototype.includes()方法接收两个参数：</strong></p>
+<ul>
+<li>要搜索的值</li>
+<li>搜索的开始索引</li>
+</ul>
+<pre><code class="JavaScript">var arr = [1,3,5,7,9,11,13];
+console.log(arr.includes(2));  //false
+console.log(arr.includes(7));  //true
+
+var pets = [&#39;dog&#39;,&#39;cat&#39;,&#39;bird&#39;];
+console.log(pets.includes(&#39;cat&#39;));  //true
+console.log(pets.includes(&#39;ca&#39;));  //false
+
+</code></pre>
+<p><strong>当第二个参数被传入时，该方法会从索引处开始往后搜索（默认索引值为0）。若搜索值在数组中存在则返回true，否则返回false。 且看下面示例：</strong></p>
+<pre><code class="JavaScript">
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;].includes(&#39;b&#39;)         // true
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;].includes(&#39;b&#39;, 1)      // true
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;].includes(&#39;b&#39;, 2)      // false
+
+</code></pre>
+<p><strong>NaN的判断。如果数组中有NaN，你又正好需要判断数组是否有存在NaN，这时你使用indexOf是无法判断的，你必须使用includes这个方法。</strong></p>
+<pre><code class="JavaScript">
+var ary1 = [NaN];
+console.log(ary1.indexOf(NaN))//-1
+console.log(ary1.includes(NaN))//true
+
+</code></pre>
+<p><strong>当数组的有空的值的时候，includes会认为空的值是undefined，而indexOf不会。</strong></p>
+<pre><code class="JavaScript">
+var ary1 = new Array(3);
+console.log(ary1.indexOf(undefined));//-1
+console.log(ary1.includes(undefined))//true
+
+</code></pre>
+<p><br></p>
+<h3 id="求幂运算符"><a href="#求幂运算符" class="headerlink" title="求幂运算符(**)"></a>求幂运算符(**)</h3><p><strong>通常求幂运算是用Math.pow()方法,但现在可以使用**</strong></p>
+<pre><code class="JavaScript">
+3 ** 5  //243
+Math.pow(3,5)  //243
+
+//还支持以下操作
+let n = 3;
+n **= 5; //243
+
+</code></pre>
+<h2 id="ES8特性"><a href="#ES8特性" class="headerlink" title="ES8特性"></a>ES8特性</h2><h3 id="Async-Functions"><a href="#Async-Functions" class="headerlink" title="Async Functions"></a>Async Functions</h3><p><strong>Async Functions也就是我们常说的Async/Await，Async/Await是一种用于处理JS异步操作的语法糖，可以帮助我们摆脱回调地狱，编写更加优雅的代码。</strong><br><strong>通俗的理解，async关键字的作用是告诉编译器对于标定的函数要区别对待。当编译器遇到标定的函数中的await关键字时，要暂时停止运行，带到await标定的函数处理完毕后，再进行相应操作。</strong><br><strong>用普通promise写法来做对比：</strong></p>
+<pre><code class="JavaScript">
+async function asyncFunc() {
+    const result = await fn();
+    console.log(result);
+}
+
+function asyncFunc() {
+    return fn()
+    .then(result =&gt; {
+        console.log(result);
+    });
+}
+
+</code></pre>
+<p><strong>按顺序处理</strong></p>
+<pre><code class="JavaScript">
+async function asyncFunc() {
+    const result1 = await fn1();
+    console.log(result1);
+    const result2 = await fn2();
+    console.log(result2);
+}
+
+
+function asyncFunc() {
+    return fn1()
+    .then(result1 =&gt; {
+        console.log(result1);
+        return fn2();
+    })
+    .then(result2 =&gt; {
+        console.log(result2);
+    });
+}
+
+</code></pre>
+<p><strong>并行处理多个异步函数</strong></p>
+<pre><code class="JavaScript">
+async function asyncFunc() {
+    const [result1, result2] = await Promise.all([
+        fn1(),
+        fn2(),
+    ]);
+    console.log(result1, result2);
+}
+
+function asyncFunc() {
+    return Promise.all([
+        fn1(),
+        fn2(),
+    ])
+    .then([result1, result2] =&gt; {
+        console.log(result1, result2);
+    });
+}
+
+</code></pre>
+<p><strong>错误处理</strong></p>
+<pre><code class="JavaScript">
+async function asyncFunc() {
+    try {
+        await fn();
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+function asyncFunc() {
+    return fn()
+    .catch(err =&gt; {
+        console.error(err);
+    });
+}
+
+</code></pre>
+<h3 id="Object-values-and-Object-entries"><a href="#Object-values-and-Object-entries" class="headerlink" title="Object.values and Object.entries"></a>Object.values and Object.entries</h3><p><strong>Object.values() 方法返回一个给定对象自己的所有可枚举属性值的数组，值的顺序与使用for…in循环的顺序相同 ( 区别在于for-in循环枚举原型链中的属性 )。</strong><br><strong>obj参数是需要待操作的对象。可以是一个对象，或者一个数组（是一个带有数字下标的对象，[10,20,30] -&gt; {0: 10,1: 20,2: 30})。</strong></p>
+<pre><code class="JavaScript">
+let obj = {
+  x: &#39;aaa&#39;,
+  y: 1
+};
+Object.values(obj); //[&#39;aaa&#39;,1]
+
+let obj = [&#39;e&#39;,&#39;s&#39;,&#39;8&#39;] //相当于 {0:&#39;e&#39;,1:&#39;s&#39;,2:&#39;8&#39;};
+Object.values(obj); //[&#39;e&#39;,&#39;s&#39;,&#39;8&#39;]
+
+// 当我们使用数字键值时，返回的是数字排序
+// 根据键值排序
+let obj = {
+  10: &#39;ccc&#39;,
+  3: &#39;ddd&#39;,
+  1: &#39;aaa&#39;
+}
+Object.values(obj) //[&#39;aaa&#39;,&#39;ddd&#39;,&#39;ccc&#39;]
+
+Object.values(&#39;es8&#39;); // [&#39;e&#39;, &#39;s&#39;, &#39;8&#39;]
+</code></pre>
+<p><strong>Object.entries 方法返回一个给定对象自身可遍历属性 [key, value] 的数组， 排序规则和 Object.values 一样。这个方法的声明比较琐碎:</strong></p>
+<pre><code class="JavaScript">
+let obj = {a: &#39;aaa&#39;, b: 2}
+Object.entries(obj)  //[[&#39;a&#39;,&#39;aaa&#39;],[&#39;b&#39;,2]]
+
+let obj = [&#39;e&#39;,&#39;s&#39;,&#39;8&#39;]
+Object.entries(obj) //[[&#39;0&#39;,&#39;e&#39;],[&#39;1&#39;,&#39;s&#39;],[&#39;2&#39;,&#39;8&#39;]]
+
+let obj = { 10: &#39;xxx&#39;, 1: &#39;yyy&#39;, 3: &#39;zzz&#39; };
+Object.entries(obj); // [[&#39;1&#39;, &#39;yyy&#39;], [&#39;3&#39;, &#39;zzz&#39;], [&#39;10&#39;: &#39;xxx&#39;]]
+
+Object.entries(&#39;es8&#39;); // [[&#39;0&#39;, &#39;e&#39;], [&#39;1&#39;, &#39;s&#39;], [&#39;2&#39;, &#39;8&#39;]]
+</code></pre>
+<h3 id="String-padding"><a href="#String-padding" class="headerlink" title="String padding"></a>String padding</h3><p><strong>为String对象增加了两个函数: padStart和padEnd</strong><br><strong>像它们名字那样，这几个函数的主要目的就是填补字符串的首部和尾部，为了使得到的结果字符串的长度能达到给定的长度。你可以通过特定的字符，或者字符串，或者默认的空格填充它。下面是函数的声明：</strong></p>
+<pre><code class="JavaScript">
+str.padStart(targetLength,空格||padString)
+str.padEnd(targetLength,空格||padString)
+
+</code></pre>
+<p><strong>这些函数的第一个参数是 targetLength（目标长度），这个是结果字符串的长度。第二个参数是可选的 padString（填充字符），一个用于填充到源字符串的字符串。默认值是空格。</strong></p>
+<pre><code class="JavaScript">
+&#39;es8&#39;.padStart(2);          // &#39;es8&#39;
+&#39;es8&#39;.padStart(5);          // &#39;  es8&#39;
+&#39;es8&#39;.padStart(6, &#39;woof&#39;);  // &#39;wooes8&#39;
+&#39;es8&#39;.padStart(14, &#39;wow&#39;);  // &#39;wowwowwowwoes8&#39;
+&#39;es8&#39;.padStart(7, &#39;0&#39;);     // &#39;0000es8&#39;
+
+&#39;es8&#39;.padEnd(2);            // &#39;es8&#39;
+&#39;es8&#39;.padEnd(5);            // &#39;es8  &#39;
+&#39;es8&#39;.padEnd(6, &#39;woof&#39;);    // &#39;es8woo&#39;
+&#39;es8&#39;.padEnd(14, &#39;wow&#39;);    // &#39;es8wowwowwowwo&#39;
+&#39;es8&#39;.padEnd(7, &#39;6&#39;);       // &#39;es86666&#39;
+
+</code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://data.littlechai.cn/alipay2.png"></li>
+                <li class="wechat-code"><img src="https://data.littlechai.cn/wx2.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <!-- <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer> -->
+        <!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/05/10/面试题合集/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://data.littlechai.cn/bg_load2.svg" data-src="http://data.littlechai.cn/blog_bg33.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://data.littlechai.cn/blog_bg33.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                面试题合集</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/11/04/H5踩坑记录/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://data.littlechai.cn/bg_load2.svg" data-src="http://data.littlechai.cn/blog_bg31.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://data.littlechai.cn/blog_bg31.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                H5踩坑记录</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<style>
+  .toc-container {
+    display: none;
+  }
+</style>
+<script>
+  window.onload = function(){
+      var valine = new Valine({
+        visitor: true // 阅读量统计
+      });
+      valine.init({
+        el: '#vcomments',
+        appId: "WAr0wBCXxXy76TX9VsNrvb18-9Nh9j0Va",
+        appKey: "awPQ580xAspEQJor3vdWQyjd",
+        path: window.location.pathname,
+        placeholder: "没时间了，快上车吧~"
+      })
+  }
+</script>
+
+
+<!--  -->
+      <section class="author-profile">
+        <!-- <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="/" class="profile gravatar"><img src="http://data.littlechai.cn/xcc.png" itemprop="image" alt="LittleChai" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="/" itemprop="url" rel="author">LittleChai</a>
+            </h3>
+          </div>
+        </div> -->
+        <!-- <hr> -->
+        <!-- <p><i class="iconfont icon-write"></i></p> -->
+        <p> <a href="/">回到主页</a>  </p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 LittleChai<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <!-- <p style="color: #666666;">&copy 2019</p> -->
+    </div>
+
+
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
+        <span style="color: #b9b9b9;"> &copy 2019~2020
+          <span>LittleChai,Powered by Hexo</span>
+            <!-- <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank"
+            style="color: #b9b9b9;">powered by hexo</a>  -->
+            <!-- by  -->
+            <!-- <a href="https://2heng.xin/" target="_blank"
+            style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a
+            href="https://www.hojun.cn/" target="_blank"
+            style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo,
+          Hosted by Coding Pages</a> -->
+        </span>
+        <p id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次|本站总访客数<span id="busuanzi_value_site_uv"></span>人</p>
+        <p style="margin: 5px;"><span id="timeDate"></span><span id="times"></span></p>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script type="text/javascript" src='/js/time.js'></script>
+<script type="text/javascript" src='/js/lazyCreate.js'></script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<!-- <script type="text/javascript" src="/js/viewer.js"></script> -->
+<!-- <script type="text/javascript" src="/js/jquery-viewer.js"></script> -->
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<!-- gitalk -->
+
+<!-- 不蒜子 网页计数器 -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://data.littlechai.cn/xcc.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">LittleChai</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/littleChai" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/lesses" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="tencent://message/?uin=767733103" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-tada" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-tada" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/book/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-book faa-tada" aria-hidden="true"></i>
+            书集
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/photo/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-photo faa-tada" aria-hidden="true"></i>
+            图集
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/bangumi/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-film faa-vertical faa-tada" aria-hidden="true"></i>
+            番组
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/music/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-headphones faa-tada" aria-hidden="true"></i>
+            歌单
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            个人简介
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 powered by hexo</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<div class="aplayer"
+
+    data-id="5004753619"
+
+    data-server="netease"
+
+    data-type="playlist"
+
+    data-fixed="true"
+
+    data-autoplay="false"
+
+    data-loop="all"
+
+    data-order="random"
+
+    data-preload="auto"
+
+    data-volume="0.7"
+
+    data-mutex="true"
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>
